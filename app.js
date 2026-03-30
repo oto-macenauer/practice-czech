@@ -4,7 +4,8 @@ var state = {
   currentSection: 0,
   answers: {},   // "sectionIdx-itemIdx" -> answer value
   checked: {},   // "sectionIdx-itemIdx" -> true after feedback shown
-  activeTest: null // randomized snapshot of the test
+  activeTest: null, // randomized snapshot of the test
+  renderedSection: -1 // tracks which section was last rendered (for entry animation)
 };
 
 /* ===== Router ===== */
@@ -134,6 +135,7 @@ function showPractice(testId) {
     state.currentSection = 0;
     state.answers = {};
     state.checked = {};
+    state.renderedSection = -1;
     state.activeTest = buildActiveTest(test);
   }
 
@@ -145,6 +147,8 @@ function showPractice(testId) {
 function renderPracticeSection(test) {
   var sIdx = state.currentSection;
   var section = test.sections[sIdx];
+  var isNewSection = (state.renderedSection !== sIdx);
+  state.renderedSection = sIdx;
   var container = document.getElementById("practice-content");
   container.innerHTML = "";
 
@@ -177,6 +181,13 @@ function renderPracticeSection(test) {
   else if (section.type === "match-pair") renderMatchPair(container, section, sIdx);
   else if (section.type === "word-order") renderWordOrder(container, section, sIdx);
   else if (section.type === "reading-comprehension") renderReadingComprehension(container, section, sIdx);
+
+  // Entry animation only on section change, not on answer re-render
+  if (isNewSection) {
+    container.querySelectorAll(".question-block").forEach(function(b) {
+      b.classList.add("animate-in");
+    });
+  }
 }
 
 /* ----- Fill Choice (i/y, u/ů/ú) ----- */
@@ -487,6 +498,7 @@ function showResults(testId) {
     state.answers = {};
     state.checked = {};
     state.currentSection = 0;
+    state.renderedSection = -1;
     state.activeTest = buildActiveTest(getTest(testId));
     navigate("#/practice/" + testId);
   };
