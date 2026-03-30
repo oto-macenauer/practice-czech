@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Procvičování češtiny</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HOME -->
+  <div id="view-home" class="view">
+    <header class="app-header">
+      <h1>Procvičování češtiny</h1>
+    </header>
+    <div id="test-list" class="test-list"></div>
+  </div>
+
+  <!-- PRACTICE -->
+  <div id="view-practice" class="view hidden">
+    <header class="app-header">
+      <button class="btn-back" onclick="navigate('#/')">&#8592; Zpět</button>
+      <h1 id="practice-title"></h1>
+    </header>
+    <div id="practice-progress" class="progress-bar"><div class="progress-fill"></div></div>
+    <div id="practice-section-title" class="section-title"></div>
+    <div id="practice-content" class="practice-content"></div>
+    <div class="practice-nav">
+      <button id="btn-prev" class="btn btn-secondary" onclick="prevSection()">&#8592; Předchozí</button>
+      <span id="section-indicator" class="section-indicator"></span>
+      <button id="btn-next" class="btn btn-primary" onclick="nextSection()">Další &#8594;</button>
+    </div>
+  </div>
+
+  <!-- PRINT -->
+  <div id="view-print" class="view hidden">
+    <header class="app-header no-print">
+      <button class="btn-back" onclick="navigate('#/')">&#8592; Zpět</button>
+      <h1 id="print-title"></h1>
+      <button class="btn btn-primary" onclick="window.print()">Vytisknout</button>
+    </header>
+    <div id="print-content" class="print-content"></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="view-results" class="view hidden">
+    <header class="app-header">
+      <h1>Výsledky</h1>
+    </header>
+    <div id="results-content" class="results-content"></div>
+    <div class="results-actions">
+      <button class="btn btn-primary" onclick="navigate('#/')">Zpět na testy</button>
+    </div>
+  </div>
+
+  <script src="data/test-2026-03-31.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
