@@ -80,15 +80,15 @@ window.TESTS.push({
         { before: "st", after: "l", choices: ["u", "ů", "ú"], correct: "ů" },
         { before: "p", after: "jdu", choices: ["u", "ů", "ú"], correct: "ů" },
         { before: "k", after: "ra", choices: ["u", "ů", "ú"], correct: "ů" },
-        { before: "trav", after: "", choices: ["u", "ů", "ú"], correct: "ů" },
-        { before: "b", after: "že", choices: ["u", "ů", "ú"], correct: "ů" },
-        { before: "kr", after: "pěj", choices: ["u", "ů", "ú"], correct: "ů" },
+        { before: "m", after: "j", choices: ["u", "ů", "ú"], correct: "ů" },
+        { before: "d", after: "vod", choices: ["u", "ů", "ú"], correct: "ů" },
+        { before: "st", after: "j", choices: ["u", "ů", "ú"], correct: "ů" },
         // u — krátké
         { before: "r", after: "ka", choices: ["u", "ů", "ú"], correct: "u" },
-        { before: "k", after: "če", choices: ["u", "ů", "ú"], correct: "u" },
         { before: "b", after: "ben", choices: ["u", "ů", "ú"], correct: "u" },
         { before: "hr", after: "ška", choices: ["u", "ů", "ú"], correct: "u" },
-        { before: "past", after: "ch", choices: ["u", "ů", "ú"], correct: "u" }
+        { before: "k", after: "kačka", choices: ["u", "ů", "ú"], correct: "u" },
+        { before: "kr", after: "pice", choices: ["u", "ů", "ú"], correct: "u" }
       ]
     },
 
