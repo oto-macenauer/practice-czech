@@ -11,7 +11,7 @@ window.TESTS.push({
       title: "Urči rod podstatného jména",
       instructions: "Vyber správný rod podstatného jména.",
       variant: "gender",
-      pick: 10,
+      pick: 5,
       items: [
         // Mužský rod
         { word: "pes", choices: ["rod mužský", "rod ženský", "rod střední"], correct: 0 },
@@ -49,7 +49,7 @@ window.TESTS.push({
       title: "Vzory podstatných jmen – rod mužský",
       instructions: "Urči vzor podstatného jména.",
       variant: "patterns",
-      pick: 8,
+      pick: 3,
       items: [
         // pán (životný, tvrdý)
         { word: "soused", choices: ["pán", "hrad", "muž", "stroj", "předseda", "soudce"], correct: 0 },
@@ -88,7 +88,7 @@ window.TESTS.push({
       title: "Vzory podstatných jmen – rod ženský",
       instructions: "Urči vzor podstatného jména.",
       variant: "patterns",
-      pick: 8,
+      pick: 3,
       items: [
         // žena
         { word: "maminka", choices: ["žena", "růže", "píseň", "kost"], correct: 0 },
@@ -128,7 +128,7 @@ window.TESTS.push({
       title: "Vzory podstatných jmen – rod střední",
       instructions: "Urči vzor podstatného jména.",
       variant: "patterns",
-      pick: 8,
+      pick: 3,
       items: [
         // město
         { word: "okno", choices: ["město", "moře", "kuře", "stavení"], correct: 0 },
